@@ -9,25 +9,30 @@ import os
 
 # MQTT CONFIG
 MQTT_BROKER =  os.environ.get('MQTT_BROKER')
-print ( "MQTT_BROKER" + MQTT_BROKER )
+print ( "MQTT_BROKER = " + MQTT_BROKER )
 
 MQTT_PORT = int( os.environ.get('MQTT_PORT') )
-print ( "MQTT_PORT" + str( MQTT_PORT ) )
+print ( "MQTT_PORT = " + str( MQTT_PORT ) )
 
 MQTT_TOPIC_PREFIX =  os.environ.get('MQTT_TOPIC_PREFIX')
-print ( "MQTT_TOPIC_PREFIX" + MQTT_TOPIC_PREFIX )
+print ( "MQTT_TOPIC_PREFIX = " + MQTT_TOPIC_PREFIX )
 
 MQTT_KEEPALIVE_INTERVAL = int( os.environ.get('MQTT_KEEPALIVE_INTERVAL') )
-print ( "MQTT_KEEPALIVE_INTERVAL" +  str( MQTT_KEEPALIVE_INTERVAL ) )
+print ( "MQTT_KEEPALIVE_INTERVAL = " +  str( MQTT_KEEPALIVE_INTERVAL ) )
 
 # OTHER CONFIG
 POLLING_INTERVAL = int( os.environ.get('POLLING_INTERVAL') )
-print ( "POLLING_INTERVAL" + str( POLLING_INTERVAL ) )
+print ( "POLLING_INTERVAL = " + str( POLLING_INTERVAL ) )
 
 # ----- END CONFIG -----
 
 mc = mqtt.Client()
 mc.connect(MQTT_BROKER, MQTT_PORT, MQTT_KEEPALIVE_INTERVAL)
+
+print ("-------------------------")
+print ("starting the infinte loop")
+print ("-------------------------")
+
 
 while True:
     # Fetch the apcupsd status output
