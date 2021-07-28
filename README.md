@@ -21,13 +21,23 @@ Polling interval right now is hardcoded to 15 seconds.
     # OTHER CONFIG
     POLLING_INTERVAL = 15
 
+# Build 
+
+Just build the docker with classic docker build command:
+
+    docker build -t apcd2mqtt:latest -f Dockerfile .
+
 # Execute
 To exeute, the easiesst and less safe way to do is starting with privileges:
 
-    docker run -it  --privileged --device /dev/usb/hiddev0 -v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket apcd2mqtt
+    docker run -d --privileged -v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket apcd2mqtt:latest    
+    
+Using also *"-v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket"* enable the option to shutdown gracefully the host via dbus socket when UPS went low battery.
 
 Don't know why just sharing the right device (i was searching with lsusb to find your UPS in your USB Bus) wasn't working.
 
+    docker run -d --device /dev/usb/hiddev0 apcd2mqtt:latest
+    
 
 # credit
 
