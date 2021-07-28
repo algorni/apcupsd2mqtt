@@ -47,6 +47,6 @@ I've just start a different script instead of running directly the apcups daemon
 
 CMD ["/sbin/apcupsd", "-b"]
 
-The shell script was more or less copied from: https://github.com/hobbyquaker/apcupsd2mqtt
+The shell script was more or less copied from: https://github.com/jiinxx/apcupsd
 
 Python script inspiration came from : https://github.com/vandenberghev/apcupsd2mqtt/blob/master/apcupsd2mqtt.py

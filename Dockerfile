@@ -3,7 +3,7 @@ FROM ubuntu:latest
 ENV LANG=C.UTF-8 DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/London
 
-COPY scripts /tmp
+COPY ./apcupsdStuff/ /tmp
 
 RUN echo Starting. \
 # && cp /etc/apt/sources.list /etc/apt/sources.list.default \
