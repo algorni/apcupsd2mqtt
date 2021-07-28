@@ -32,6 +32,16 @@ while True:
         v = s[1].strip()
         d[k] = v
 
+    #do some adjustment to get numeric data
+
+    d["LINEVnum"] = float( d["LINEV"].split(" ")[0] )
+    d["LOADPCTnum"] = float( d["LOADPCT"].split(" ")[0] )
+    d["BCHARGEnum"] = float( d["BCHARGE"].split(" ")[0] )
+    d["TIMELEFTnum"]  = float( d["TIMELEFT"].split(" ")[0] )
+    d["BATTVNum"] = float( d["BATTV"].split(" ")[0] )
+    d["NOMPOWERnum"] = float( d["NOMPOWER"].split(" ")[0] )
+    d["WATTnum"]  = (float(d["LOADPCTnum"]) / 100.0) * int(d["NOMPOWERnum"])
+
     #serialize the dictionary as a JSON
     jsonPayload = json.dumps(d, indent=2)
     

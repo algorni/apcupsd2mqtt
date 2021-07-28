@@ -26,7 +26,7 @@ RUN echo Starting. \
 COPY ./src/ /usr/local/bin
 
 WORKDIR /usr/local/bin
-RUN chmod +x startup.sh
+RUN chmod +x startupSequence.sh
 
 #run the startup script
-CMD ["./startup.sh"]
+CMD ["./startupSequence.sh"]
