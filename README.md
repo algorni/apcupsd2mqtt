@@ -16,10 +16,9 @@ The Python code requires some environment variable to connect to the right MQTT 
     MQTT_TOPIC_PREFIX =  os.environ.get('MQTT_TOPIC_PREFIX')
     MQTT_KEEPALIVE_INTERVAL = int( os.environ.get('MQTT_KEEPALIVE_INTERVAL') )
 
-Polling interval right now is hardcoded to 15 seconds.
-
     # OTHER CONFIG
-    POLLING_INTERVAL = 15
+    POLLING_INTERVAL = int( os.environ.get('UPS_POLLING') )
+
 
 # Build 
 
