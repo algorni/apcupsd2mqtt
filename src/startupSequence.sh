@@ -1,3 +1,4 @@
+#!/bin/bash
 # Start the first process
 echo "Starting apcupsd"
 /sbin/apcupsd

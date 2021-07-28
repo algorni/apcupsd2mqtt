@@ -29,4 +29,4 @@ WORKDIR /usr/local/bin
 RUN chmod +x startupSequence.sh
 
 #run the startup script
-CMD ["./startupSequence.sh"]
+ENTRYPOINT ["startupSequence.sh"]
