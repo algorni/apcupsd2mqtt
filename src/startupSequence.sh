@@ -13,4 +13,4 @@ sleep 10
 
 # Start the second process (this is a blocking script...)
 echo "Starting Python infinite loop to mqtt"
-python3 apcups2mqtt.py
+python3 apcupsd2mqtt.py
