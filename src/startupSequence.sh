@@ -1,4 +1,5 @@
 # Start the first process
+echo "Starting apcupsd"
 /sbin/apcupsd
 status=$?
 if [ $status -ne 0 ]; then
@@ -7,7 +8,9 @@ if [ $status -ne 0 ]; then
 fi
 
 echo "Waiting... for apcupsd to get ready"
-sleep 5
+sleep 10
+
 
 # Start the second process (this is a blocking script...)
-/usr/local/bin/apcupsd2mqtt 
+echo "Starting Python infinite loop to mqtt"
+python3 apcups2mqtt.py
